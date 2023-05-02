@@ -33,12 +33,12 @@ saved_model = pickle.dumps(naivebayes)
 s = pickle.loads(saved_model)
 
 
-slt.header("News Categorizer")
+slt.header("Text Classifier")
 input=slt.text_input("Enter the text")
 
 inp=vector.transform([input]).toarray()
     
 
-if slt.button("Predict"):
+if slt.button("Find"):
     pre=(str(list(s.predict(inp))[0]).replace('0', 'TECH').replace('1', 'BUSINESS').replace('2', 'SPORTS').replace('3','ENTERTAINMENT').replace('4','POLITICS'))
     slt.write(pre)
